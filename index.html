@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>9 meses ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--accent:#ff6b8a;
+--bg1:#fff0f4;
+--bg2:#ffeaf3;
+--text:#3b2f2f;
+}
+
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(var(--bg1),var(--bg2));
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+overflow:hidden;
+}
+
+/* telas */
+
+.screen{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+padding:30px;
+box-sizing:border-box;
+}
+
+/* botão inicial */
+
+button{
+background:var(--accent);
+border:none;
+color:white;
+font-size:18px;
+padding:16px 24px;
+border-radius:14px;
+cursor:pointer;
+max-width:320px;
+line-height:1.4;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* loading */
+
+#loading{
+display:none;
+}
+
+.loading-bar{
+width:220px;
+height:20px;
+background:#ffd6df;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:var(--accent);
+transition:width .2s;
+}
+
+/* conteúdo */
+
+#conteudo{
+display:none;
+overflow:auto;
+align-items:flex-start;
+justify-content:flex-start;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:25px 20px 40px;
+}
+
+h1{
+font-family:"Dancing Script";
+font-size:clamp(40px,10vw,70px);
+color:var(--accent);
+text-align:center;
+margin:10px 0 0;
+}
+
+.subtitle{
+text-align:center;
+letter-spacing:3px;
+font-size:14px;
+margin-bottom:25px;
+color:#777;
+}
+
+.phrases{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.phrases p{
+margin:0;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+font-family:"Dancing Script";
+font-size:26px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- tela botão -->
+
+<div class="screen" id="inicio">
+
+<button onclick="iniciar()">
+Amorzinho lindo do meu coração, cheirosa, minha princesa, perfeita, nutritiva, vitaminosa, minha gotosa... ❤️<br><br>
+Clique aqui
+</button>
+
+</div>
+
+<!-- loading -->
+
+<div class="screen" id="loading">
+
+<h2>Te dando um cheiro...</h2>
+
+<div class="loading-bar">
+<div class="progress" id="barra"></div>
+</div>
+
+</div>
+
+<!-- conteúdo -->
+
+<div class="screen" id="conteudo">
+
+<div class="container">
+
+<h1>9 meses</h1>
+<div class="subtitle">de namoro</div>
+
+<div class="phrases">
+
+<p>❤️ Grato a Deus por ter você</p>
+<p>❤️ Por ter seus barquinhos de papel</p>
+<p>❤️ Por falar e ser ouvido</p>
+<p>❤️ Por ouvir você falar</p>
+<p>❤️ Por te abraçar e carinhar</p>
+<p>❤️ Por sempre ser amável</p>
+<p>❤️ Por estar com você</p>
+<p>❤️ Por te ver sorrir</p>
+<p>❤️ Por te ver cantar</p>
+<p>❤️ Por te abraçar</p>
+<p>❤️ Por te beijar</p>
+<p>❤️ Por aprendermos juntos</p>
+<p>❤️ Por sermos nós</p>
+<p>❤️ Por você e eu</p>
+<p>❤️ Pelas nossas histórias</p>
+<p>❤️ Pelos nossos passeios</p>
+<p>❤️ Pelas nossas risadas</p>
+<p>❤️ Pelas nossas lágrimas</p>
+<p>❤️ Pelas nossas conversas</p>
+<p>❤️ Pelas nossas orações</p>
+<p>❤️ Por cada batida dos nossos corações</p>
+<p>❤️ Pelas nossas vidas</p>
+<p>❤️ Pelos nossos sonhos</p>
+<p>❤️ Pelo nosso futuro</p>
+<p>❤️ Pelas nossas escolhas</p>
+
+</div>
+
+<div class="footer">
+Por você... ❤️
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function iniciar(){
+
+document.getElementById("inicio").style.display="none"
+document.getElementById("loading").style.display="flex"
+
+let progresso=0
+
+let intervalo=setInterval(()=>{
+
+progresso+=2
+document.getElementById("barra").style.width=progresso+"%"
+
+if(progresso>=100){
+
+clearInterval(intervalo)
+
+document.getElementById("loading").style.display="none"
+document.getElementById("conteudo").style.display="flex"
+
+}
+
+},40)
+
+}
+
+</script>
+
+</body>
+</html>
